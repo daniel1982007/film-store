@@ -1,25 +1,32 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react'
+import Navbar from './components/Navbar'
+import AddFilmForm from './components/AddFilmForm'
+import Film from './components/Film'
+import FilmList from './components/FilmList'
+import Foot from './components/Foot'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+import {Switch, Route} from 'react-router-dom'
+
+const App = () => {
+    return (
+        <div className='bg-light vh-100'>
+            <Navbar />
+            
+            <Switch>
+                <Route exact path='/'>
+                    <FilmList />
+                </Route>
+                <Route path='/add'>
+                    <AddFilmForm />
+                </Route>
+                <Route path='/:id'>
+                    <Film />
+                </Route>
+            </Switch>
+
+            <Foot />
+        </div>
+    )
 }
 
-export default App;
+export default App
