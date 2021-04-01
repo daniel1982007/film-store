@@ -21,7 +21,7 @@ const FilmList = () => {
     return (
         !films.length ? 
             (<div className='m-3 text-center'>
-                <div className="spinner-border"></div>
+                <div >No data here</div>
             </div>) 
             :
             (<>
